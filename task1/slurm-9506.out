@@ -1,0 +1,14 @@
+g++ -O3 -march=native -fopenmp main.cc -lOpenCL -o build/super-boring-task
+In file included from /gnu/store/37ybpm63g3m6fr6nc10qy2racqjxcld4-profile/include/CL/cl.h:20,
+                 from /gnu/store/37ybpm63g3m6fr6nc10qy2racqjxcld4-profile/include/CL/opencl.h:24,
+                 from /gnu/store/37ybpm63g3m6fr6nc10qy2racqjxcld4-profile/include/CL/cl2.hpp:504,
+                 from main.cc:9:
+/gnu/store/37ybpm63g3m6fr6nc10qy2racqjxcld4-profile/include/CL/cl_version.h:22:104: note: ‘#pragma message: cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 300 (OpenCL 3.0)’
+   22 | #pragma message("cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 300 (OpenCL 3.0)")
+      |                                                                                                        ^
+Platform name: NVIDIA CUDA
+Device name: NVIDIA GeForce GTX 1060 6GB
+           function              OpenMP        OpenCL total      OpenCL copy-in       OpenCL kernel     OpenCL copy-out    OpenMP bandwidth    OpenCL bandwidth
+vector-times-vector             13962us            108604us             76579us               291us             31733us         27.0368GB/s         1297.21GB/s
+matrix-times-vector             47932us            400084us            385892us                27us             14164us         26.2567GB/s         46612.5GB/s
+matrix-times-matrix           1493245us             23035us              8641us               141us             14253us       0.0252797GB/s         267.722GB/s
